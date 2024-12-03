@@ -3,7 +3,7 @@
     "outDir": "dist",
     "module": "esnext",
     "target": "es5",
-    "lib": ["es6", "es5"],
+    "lib": ["es6", "es5", "ES2016"],
     "sourceMap": true,
     "allowJs": false,
     "jsx": "react",
@@ -14,7 +14,8 @@
     "noImplicitThis": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true,
+    "typeRoots": ["node_modules/@types"],
+   "ignoreDeprecations": "5.0",
     "allowSyntheticDefaultImports": true,
     "strict": true
   },
