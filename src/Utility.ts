@@ -41,7 +41,7 @@ export async function waitForChange(
     first = await getFirst();
     second = await getSecond();
     await new Promise(resolve => {
-      setTimeout(resolve, 100);
+      setTimeout(() => { resolve(0) }, 100);
     });
     count++;
     if (count++ > 20) {
@@ -92,7 +92,7 @@ export function getArrowSize(
 
 export function getBorderRadius(popoverStyle: StyleProp<ViewStyle>): number {
   if (StyleSheet.flatten(popoverStyle).borderRadius === 0) return 0;
-  return StyleSheet.flatten(popoverStyle).borderRadius || DEFAULT_BORDER_RADIUS;
+  return Number(StyleSheet.flatten(popoverStyle).borderRadius) || DEFAULT_BORDER_RADIUS;
 }
 
 export function getChangedProps(
