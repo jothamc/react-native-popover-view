@@ -162,10 +162,11 @@ export default class Popover extends Component<PublicPopoverProps, PublicPopover
         }
       } else if (React.isValidElement(from)) {
         if (isVisible === undefined) {
-          sourceElement = React.cloneElement(
-            from,
-            { onPress: () => this.setState({ isVisible: true }) }
-          );
+          sourceElement = from
+          // sourceElement = React.cloneElement(
+          //   from,
+          //   { onPress: () => this.setState({ isVisible: true }) }
+          // );
         } else {
           sourceElement = from;
         }
