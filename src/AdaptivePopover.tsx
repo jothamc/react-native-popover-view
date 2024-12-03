@@ -90,7 +90,7 @@ export default class AdaptivePopover extends Component<AdaptivePopoverProps, Ada
       this.handleResizeEventSubscription?.remove();
     else
       // Backward-compatibility with RN <= 0.63
-      Dimensions.removeEventListener('change', this.handleResizeEvent);
+      // Dimensions.removeEventListener('change', this.handleResizeEvent);
 
     this.keyboardDidShowSubscription?.remove();
     this.keyboardDidHideSubscription?.remove();
@@ -216,7 +216,7 @@ export default class AdaptivePopover extends Component<AdaptivePopoverProps, Ada
     let count = 0;
     while (!fromRef?.current) {
       await new Promise(resolve => {
-        setTimeout(resolve, 100);
+        setTimeout(() => { resolve(0) }, 100);
       });
       // Timeout after 2 seconds
       if (count++ > 20) return;
@@ -241,7 +241,7 @@ export default class AdaptivePopover extends Component<AdaptivePopoverProps, Ada
       }
 
       await new Promise(resolve => {
-        setTimeout(resolve, 100);
+        setTimeout(() => { resolve(0) }, 100);
       });
       // Timeout after 2 seconds
       if (count++ > 20) return;
