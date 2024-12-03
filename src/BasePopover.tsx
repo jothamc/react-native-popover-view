@@ -270,7 +270,7 @@ export default class BasePopover extends Component<BasePopoverProps, BasePopover
       fade: 0,
       scale: 0,
       translatePoint: this.getTranslateOrigin(),
-      callback: () => setTimeout(this.props.onCloseComplete),
+      callback: () => setTimeout(() => this.props.onCloseComplete?.()),
       easing: Easing.inOut(Easing.quad),
       geom: this.getGeom()
     });
